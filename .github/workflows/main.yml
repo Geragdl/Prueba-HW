@@ -1,0 +1,16 @@
+name: Notificar creación de cliente
+
+on:
+  push:
+    paths:
+      - 'gestion_clientes.py'
+
+jobs:
+  notificar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar el código
+        uses: actions/checkout@v3
+      
+      - name: Enviar notificación
+        run: echo "Se ha agregado un nuevo cliente al sistema."
